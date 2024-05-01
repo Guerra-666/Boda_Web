@@ -1,0 +1,17 @@
+{
+  "name": "boda",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "runboda"
+  },
+  "keywords": [
+    "boda"
+  ],
+  "author": "adrianguerra",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

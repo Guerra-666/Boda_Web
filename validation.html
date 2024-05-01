@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>¡Ingresa tu codigo de acceso!</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <h5 class="card-title">Ingresa tu codigo de acceso</h5>
+                        <form>
+                            <div class="form-group">
+                                <label for="codigo">Invitacion</label>
+                                <input type="password" class="form-control" id="codigo" placeholder="Ingrese el código">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Definir un arreglo de códigos válidos
+        var codigosValidos = ['codigo1', 'codigo2', 'codigo3'];
+    
+        // Obtener el formulario
+        var form = document.querySelector('form');
+    
+        // Agregar un controlador de eventos 'submit' al formulario
+        form.addEventListener('submit', function(event) {
+            // Prevenir el comportamiento de envío predeterminado del formulario
+            event.preventDefault();
+    
+            // Obtener el valor del campo de entrada del código
+            var codigoIngresado = document.getElementById('codigo').value;
+    
+            // Verificar si el código ingresado está en el arreglo de códigos válidos
+            if (codigosValidos.includes(codigoIngresado)) {
+                // Si el código es válido, redirigir a index.html
+                window.location.href = 'index.html';
+            } else {
+                // Si el código no es válido, mostrar un mensaje de error
+                alert('Codigo no valido');
+            }
+        });
+    </script>
+
+</body>
+</html>
