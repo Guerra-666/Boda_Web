@@ -115,7 +115,11 @@
 		Your browser does not support the audio element.
 	  </audio>
 
-	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/novios_head_bg.jpg);" /*data-stellar-background-ratio="0.5"*/>
+	<header id="fh5co-header" class="fh5co-cover"  style="background-image:url(images/novios_head_bg.jpg);" /*data-stellar-background-ratio="0.5"*/>
+	<div class="bg-image" style="background-image:url(images/img_bg_1.jpg);"></div>
+	<div class="bg-image" style="background-image:url(images/img_bg_2.jpg);"></div>
+	<div class="bg-image" style="background-image:url(images/img_bg_3.jpg);"></div>
+	<div class="overlay"></div>
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -135,6 +139,10 @@
 	</header>
 
 	<div id="fh5co-couple" style="background-image:url(images/fondo1.jpg);" /*data-stellar-background-ratio="0.9"*/>
+		<div class="bg-image" style="background-image:url(images/img_bg_1.jpg);"></div>
+		<div class="bg-image" style="background-image:url(images/img_bg_2.jpg);"></div>
+		<div class="bg-image" style="background-image:url(images/img_bg_3.jpg);"></div>
+		<div class="overlay"></div>
 		<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
@@ -633,44 +641,28 @@
 	<script src="js/main.js"></script>
 
 	<script>
-		// Carga la API de YouTube para iframes
-		var tag = document.createElement('script');
-		tag.src = "https://www.youtube.com/iframe_api";
-		var firstScriptTag = document.getElementsByTagName('script')[0];
-		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-	  
-		// Crea un reproductor de YouTube después de que la API se haya cargado
-		var player;
-		function onYouTubeIframeAPIReady() {
-		  player = new YT.Player('player', {
-			height: '100%',
-			width: '100%',
-			videoId: 'jbbOKyuHM0s',
-			playerVars: {
-			  autoplay: 1,
-			  loop: 1,
-			  playlist: 'jbbOKyuHM0s',
-			  controls: 0,
-			  showinfo: 0,
-			  autohide: 1,
-			  modestbranding: 1,
-			  vq: 'hd1080'
-			},
-			events: {
-			  onReady: function(e) {
-				e.target.mute();
-			  }
-			}
-		  });
-		}
-    var d = new Date(new Date().getTime() + 502 * 120 * 120 * 2020);
+		/*var imagenes = ['images/img_bg_1.jpg', 'images/img_bg_2.jpg', 'images/img_bg_3.jpg']; // Lista de imágenes
+	 	indiceActual = 0;
 
-    // default example
-    simplyCountdown('.simply-countdown-one', {
+		setInterval(function() {
+		indiceActual = (indiceActual + 1) % imagenes.length; // Incrementa el índice y lo mantiene dentro de los límites de la lista
+		document.getElementById('fh5co-couple').style.backgroundImage = 'url(' + imagenes[indiceActual] + ')';
+		}, 2000); // Cambia la imagen cada 5 segundos
+		// default example
+    	simplyCountdown('.simply-countdown-one', {
         year: d.getFullYear(),
         month: d.getMonth() + 1,
         day: d.getDate()
-    });
+    	});*/
+
+		var imagenes = document.querySelectorAll('.bg-image'); // Lista de imágenes
+		var indiceActual = 0;
+
+		setInterval(function() {
+		imagenes[indiceActual].style.opacity = '0';
+		indiceActual = (indiceActual + 1) % imagenes.length; // Incrementa el índice y lo mantiene dentro de los límites de la lista
+		imagenes[indiceActual].style.opacity = '1';
+		}, 5000); // Cambia la imagen cada 5 segundos
 
     //jQuery example
     $('#simply-countdown-losange').simplyCountdown({

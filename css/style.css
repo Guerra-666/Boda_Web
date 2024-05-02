@@ -19,6 +19,22 @@ body {
   background: #fff;
 }
 
+.bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: opacity 1s;
+  opacity: 0;
+}
+
+.bg-image:first-child {
+  opacity: 1;
+}
+
 .fh5co-started-black {
   background-color: black;
 }
