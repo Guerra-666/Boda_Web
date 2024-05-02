@@ -1368,6 +1368,28 @@ form label {
   margin-bottom: 10px;
 }
 
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.button-container a {
+  flex: 1 0 auto;
+  margin: 5px;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .button-container {
+    flex-direction: column;
+  }
+
+  .button-container a {
+    flex: 1 0 auto;
+  }
+}
+
 #fh5co-started {
   position: relative;
 }
